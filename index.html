@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="appTitle">Visualisasi Pengeluaran &amp; Anggaran</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="storage-warning" class="banner banner--warning" hidden></div>
+  <div id="storage-error"   class="banner banner--error"   hidden></div>
+
+  <main class="container">
+    <header class="app-header">
+      <h1 data-i18n="appTitle">Visualisasi Pengeluaran &amp; Anggaran</h1>
+      <div class="header-controls">
+        <!-- Language toggle -->
+        <button id="lang-toggle" class="btn btn--icon" aria-label="Switch language" title="EN / ID">🇮🇩</button>
+        <!-- Dark/light toggle -->
+        <button id="theme-toggle" class="btn btn--icon" aria-label="Ganti tema" title="Ganti tema">🌙</button>
+      </div>
+    </header>
+
+    <!-- Balance -->
+    <section class="card balance-card" aria-labelledby="balance-heading">
+      <h2 id="balance-heading" class="section-title" data-i18n="totalBalance">Total Saldo</h2>
+      <p id="balance-display" class="balance-amount">Rp0</p>
+      <div class="spend-limit-row">
+        <label for="spend-limit" class="spend-limit-label" data-i18n="monthlyLimit">Batas Bulanan (Rp)</label>
+        <input type="number" id="spend-limit" min="0" step="1"
+               data-i18n-placeholder="setLimitPlaceholder"
+               placeholder="Atur batas…" class="spend-limit-input" />
+        <span id="spend-limit-status" class="spend-limit-status" hidden></span>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tab-bar" role="tablist">
+      <button class="tab tab--active" role="tab" aria-selected="true"
+              data-tab="transactions" data-i18n="tabTransactions">Transaksi</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="monthly" data-i18n="tabMonthly">Ringkasan Bulanan</button>
+    </div>
+
+    <!-- Panel: Transactions -->
+    <div id="panel-transactions" class="tab-panel">
+
+      <!-- Form -->
+      <section class="card form-card" aria-labelledby="form-heading">
+        <h2 id="form-heading" class="section-title" data-i18n="addTransaction">Tambah Transaksi</h2>
+        <form id="transaction-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="item-name" data-i18n="itemName">Nama Item</label>
+              <input type="text" id="item-name" name="name" maxlength="100"
+                     data-i18n-placeholder="itemNamePlaceholder"
+                     placeholder="mis. Makan siang, Tiket bus" autocomplete="off" />
+              <span class="field-error" id="name-error" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="item-amount" data-i18n="amount">Jumlah (Rp)</label>
+              <input type="number" id="item-amount" name="amount"
+                     min="0.01" step="0.01" placeholder="0" />
+              <span class="field-error" id="amount-error" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="item-category" data-i18n="category">Kategori</label>
+              <div class="select-row">
+                <select id="item-category" name="category"></select>
+                <button type="button" class="btn btn--outline btn--sm"
+                        id="manage-categories-btn" data-i18n="newCategory">+ Baru</button>
+              </div>
+              <span class="field-error" id="category-error" role="alert"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary" data-i18n="addTransaction">Tambah Transaksi</button>
+        </form>
+      </section>
+
+      <!-- Category manager -->
+      <section class="card cat-manager-card" id="cat-manager"
+               aria-labelledby="cat-manager-heading" hidden>
+        <h2 id="cat-manager-heading" class="section-title" data-i18n="manageCategories">Kelola Kategori</h2>
+        <form id="new-cat-form" novalidate class="new-cat-form">
+          <div class="field field--inline">
+            <input type="text" id="new-cat-name" maxlength="30"
+                   data-i18n-placeholder="categoryNamePlaceholder"
+                   placeholder="Nama kategori" autocomplete="off" />
+            <input type="color" id="new-cat-color" value="#8b5cf6"
+                   data-i18n-title="pickColor" title="Pilih warna" class="color-picker" />
+            <button type="submit" class="btn btn--primary btn--sm" data-i18n="add">Tambah</button>
+          </div>
+          <span class="field-error" id="new-cat-error" role="alert"></span>
+        </form>
+        <div id="custom-cat-list" class="custom-cat-list"></div>
+      </section>
+
+      <!-- Sort -->
+      <div class="list-controls">
+        <span class="list-controls__label" data-i18n="sortBy">Urutkan:</span>
+        <div class="sort-btns" role="group" data-i18n-aria-label="sortTransactions">
+          <button class="btn btn--sort btn--sort--active" data-sort="date"     data-i18n="sortDate">Tanggal ↓</button>
+          <button class="btn btn--sort"                   data-sort="amount"   data-i18n="sortAmount">Jumlah</button>
+          <button class="btn btn--sort"                   data-sort="category" data-i18n="sortCategory">Kategori</button>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <!-- List -->
+        <section class="card list-card" aria-labelledby="list-heading">
+          <h2 id="list-heading" class="section-title" data-i18n="tabTransactions">Transaksi</h2>
+          <div id="transaction-list" class="transaction-list">
+            <p class="empty-state" data-i18n="noTransactions">Belum ada transaksi.</p>
+          </div>
+        </section>
+        <!-- Chart -->
+        <section class="card chart-card" aria-labelledby="chart-heading">
+          <h2 id="chart-heading" class="section-title" data-i18n="spendingByCategory">Pengeluaran per Kategori</h2>
+          <div class="chart-wrapper">
+            <canvas id="spending-chart"
+                    data-i18n-aria-label="chartAriaLabel"
+                    aria-label="Diagram lingkaran pengeluaran per kategori" role="img"></canvas>
+            <p id="chart-placeholder" class="empty-state" data-i18n="noChartData">Belum ada data pengeluaran.</p>
+          </div>
+        </section>
+      </div>
+    </div><!-- /panel-transactions -->
+
+    <!-- Panel: Monthly -->
+    <div id="panel-monthly" class="tab-panel" hidden>
+      <section class="card" aria-labelledby="monthly-heading">
+        <h2 id="monthly-heading" class="section-title" data-i18n="tabMonthly">Ringkasan Bulanan</h2>
+        <div id="monthly-summary" class="monthly-summary">
+          <p class="empty-state" data-i18n="noTransactions">Belum ada transaksi.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
