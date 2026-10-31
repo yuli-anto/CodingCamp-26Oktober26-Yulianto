@@ -1,0 +1,213 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold the project file structure and HTML shell": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401625163
+      },
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401637320
+      }
+    ],
+    "2.1 Define the Transaction data model and CATEGORY_CONFIG constant": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401625919
+      }
+    ],
+    "2.2 Implement `StorageService.load()` and `StorageService.save()`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401626370
+      }
+    ],
+    "3.1 Implement `Validator.validateName(value)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401626598
+      }
+    ],
+    "3.3 Implement `Validator.validateAmount(value)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627039
+      }
+    ],
+    "3.5 Implement `Validator.validateCategory(value)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627211
+      }
+    ],
+    "4.1 Implement `formatCurrency(amount)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627335
+      }
+    ],
+    "4.3 Implement in-memory `transactions` array and `loadFromStorage()`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627466
+      }
+    ],
+    "4.4 Implement `addTransaction(tx)` and `deleteTransaction(id)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627644
+      }
+    ],
+    "5. Checkpoint — Verify pure logic before touching the DOM": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401627796
+      }
+    ],
+    "6.1 Add the Balance Display region to `index.html`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628039
+      }
+    ],
+    "6.2 Add the Input Form region to `index.html`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628295
+      }
+    ],
+    "6.3 Add the Transaction List region to `index.html`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628435
+      }
+    ],
+    "6.4 Add the Chart region to `index.html`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628581
+      }
+    ],
+    "6.5 Add the error/warning banner elements to `index.html`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628715
+      }
+    ],
+    "7.1 Implement `renderBalance()`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401628851
+      }
+    ],
+    "7.2 Implement `renderTransactionList()`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629023
+      }
+    ],
+    "7.5 Implement `renderChart()`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629261
+      }
+    ],
+    "7.7 Implement `renderAll()` and the balance property test helper": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629415
+      }
+    ],
+    "8.1 Implement the form submit handler `handleFormSubmit(event)`": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629544
+      }
+    ],
+    "8.2 Implement the delete button click handler using event delegation": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629670
+      }
+    ],
+    "8.3 Implement the `DOMContentLoaded` initialisation block": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629800
+      }
+    ],
+    "9. Checkpoint — Verify full application flow in the browser": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401629920
+      }
+    ],
+    "10.1 Implement base layout and desktop styles": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401630253
+      }
+    ],
+    "10.2 Implement responsive layout for 320px–1920px viewports": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401630470
+      }
+    ],
+    "10.3 Implement focus indicators with 3:1 contrast ratio": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401630699
+      }
+    ],
+    "10.4 Implement minimum 44×44 CSS px tap targets on mobile": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401630883
+      }
+    ],
+    "10.5 Set scroll behaviour on the Transaction List container": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401631351
+      }
+    ],
+    "11. Final checkpoint — Ensure all tests pass, full manual smoke test": [
+      {
+        "executionId": "aa99c91d-91c9-4f92-8bb2-6d0c6be23564",
+        "chatSessionId": "sess_aca25181-46d8-4799-99a2-dc3026a6daec",
+        "timestamp": 1793401631516
+      }
+    ]
+  }
+}
